@@ -47,7 +47,7 @@ if __name__ == '__main__':
     rospy.init_node('move_turtlebot')
 
     # Create a SimpleActionClient for the move_base action server.
-    turtlebot_navigation_client = actionlib.SimpleActionClient(<Add-action-server-name>,
+    turtlebot_navigation_client = actionlib.SimpleActionClient('move_base',
                                                                MoveBaseAction)
 
     # Wait until the move_base action server becomes available.
@@ -62,8 +62,8 @@ if __name__ == '__main__':
     turtlebot_robot2_goal.target_pose.header.stamp = rospy.Time.now()
     turtlebot_robot2_goal.target_pose.header.frame_id = "map"
     turtlebot_robot2_goal.target_pose.header.seq = 1
-    turtlebot_robot2_goal.target_pose.pose.position.x = <Add-second-goal-Position-X>
-    turtlebot_robot2_goal.target_pose.pose.position.y = <Add-second-goal-Position-Y>
+    turtlebot_robot2_goal.target_pose.pose.position.x = -8.1
+    turtlebot_robot2_goal.target_pose.pose.position.y = -1.43
     turtlebot_robot2_goal.target_pose.pose.position.z = 0.0
     turtlebot_robot2_goal.target_pose.pose.orientation.x = 0.0
     turtlebot_robot2_goal.target_pose.pose.orientation.y = 0.0
@@ -72,7 +72,7 @@ if __name__ == '__main__':
 
     # Send the goal to the action server.
     try:
-        turtlebot_navigation_client.send_goal(<Add-correct-goal-variable>)
+        turtlebot_navigation_client.send_goal(turtlebot_robot2_goal)
         rospy.loginfo("Goal sent to move_base action server.")
 
         # Wait for the server to finish performing the action.
