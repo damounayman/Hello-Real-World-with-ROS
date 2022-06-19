@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<behavior name="Pick part from conveyor learn">
+
+	<executable package_path="flexbe_behaviors.pick_part_from_conveyor_learn_sm" class="PickpartfromconveyorlearnSM" />
+	<tagstring>robot pick and place</tagstring>
+	<author>ayman damoun</author>
+	<date>Sat Jun 18 2022</date>
+	<description>
+		Pick part from conveyor learn course
+	</description>
+
+
+	<!-- Contained Behaviors -->
+
+	<!-- Available Parameters -->
+
+</behavior>
